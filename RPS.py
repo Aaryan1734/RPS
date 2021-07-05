@@ -8,12 +8,9 @@
 
 import getpass
 
-print("Let's play a game of rock paper scissors!!")
-
-print("You'll need a partner to play this game.")
-
-print("To End the Game input any response other than rock, paper or scissors")
-
+print("""Let's play a game of rock paper scissors!! 
+You'll need a partner to play this game.
+To End the Game input any response other than rock, paper or scissors.""")
 print("-" * 100)
 
 play_again = "y"
@@ -24,25 +21,17 @@ u2_score = 0
 
 while play_again == "y":
 
-    U1 = getpass.getpass(prompt="Player 1, enter your choice from Rock, Paper or Scissors--> ")
+    user_1 = getpass.getpass(
+        prompt="Player 1, enter your choice from Rock, Paper or Scissors ").lower()
 
-    U2 = getpass.getpass(prompt="Player 2, enter your choice from Rock, Paper or Scissors--> ")
+    user_2 = getpass.getpass(
+        prompt="Player 2, enter your choice from Rock, Paper or Scissors ").lower()
 
-    user_1 = U1.lower()
+    print("Player 1 typed", user_1.capitalize())
 
-    user_2 = U2.lower()
+    print("Player 2 typed", user_2.capitalize())
 
-    print("Player 1 typed", U1.capitalize())
-
-    print("Player 2 typed", U2.capitalize())
-
-    if user_1 == "rock" and user_2 == "rock":
-        print("Game tied!!")
-
-    elif user_1 == "paper" and user_2 == "paper":
-        print("Game tied!!")
-
-    elif user_1 == "scissors" and user_2 == "scissors":
+    if user_1 == user_2:
         print("Game tied!!")
 
     elif user_1 == "rock" and user_2 == "scissors":
@@ -71,7 +60,7 @@ while play_again == "y":
 
     else:
         print("Somebody typed something incorrect")
-        play_again = input("Do you want to play again? (y/n)--> ")
+        play_again = input("Do you want to play again? (y/n) ")
         if play_again == "n":
             break
 
